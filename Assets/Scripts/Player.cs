@@ -17,10 +17,6 @@ public class Player : MonoBehaviour
     {
         Move();
 
-        if (Input.GetKeyDown("space"))
-        {
-            Jump();
-        }
     }
 
     void Move()
@@ -37,9 +33,4 @@ public class Player : MonoBehaviour
         transform.position += movement;
     }
 
-    void Jump()
-    {
-        Vector3 impulse = new Vector3(0f, 5.0f, 0.0f);
-        GetComponent<Rigidbody>().AddForce(impulse, ForceMode.Impulse);
-    }
 }
