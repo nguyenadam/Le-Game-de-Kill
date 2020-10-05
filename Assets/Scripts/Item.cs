@@ -8,6 +8,7 @@ public class Item : MonoBehaviour
     public string description;
     public int weight; // ounces
     public int size; // cube inches
+    public string category;
     public ArrayList tags = new ArrayList();
 
     // Start is called before the first frame update
@@ -19,6 +20,6 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
