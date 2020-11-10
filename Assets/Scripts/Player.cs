@@ -40,18 +40,9 @@ public class Player : MonoBehaviour
 
     public Boolean AddItem(Item item)
     {
-        // if item is reachable and still available etc
-        if (true)
-        {
-            ArrayList hands = (ArrayList)inventories[0];     
-            hands.Add(item);
-            Debug.Log(item + " was added to inventory.");
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        ArrayList hands = (ArrayList)inventories[0];     
+        hands.Add(item);
+        Debug.Log(item + " was added to inventory.");
+        return true;
     }
-
 }
