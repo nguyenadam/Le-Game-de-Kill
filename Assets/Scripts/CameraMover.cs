@@ -9,6 +9,7 @@ public class CameraMover : MonoBehaviour
     public Player player;
     int speed;
     Vector3 displacement;
+    Item previousItem;
 
     // Start is called before the first frame update
     void Start()
@@ -43,8 +44,18 @@ public class CameraMover : MonoBehaviour
                 // do whatever you want
                 if(hit.transform.tag == "Item")
                 {
-                    player.AddItem(hit.transform.gameObject.GetComponent<Item>());
-                    Destroy(hit.transform.gameObject);
+                    Item item = hit.transform.gameObject.GetComponent<Item>();
+                    player.AddItem(item);
+                    // Destroy(hit.transform.gameObject);
+
+                    item.menuOpen = !item.menuOpen;
+                    if(previousItem != null && previousItem != item)
+                    {
+                        previousItem.menuOpen = false;
+                    }
+                    
+                    previousItem = item;
+
                 }
                 
             }
